@@ -1,0 +1,21 @@
+repositories:
+  BehaviorTree.ROS2:
+    type: git
+    url: git@github.com:BehaviorTree/BehaviorTree.ROS2.git
+    version: d9629581c905262d7734dbe96be91b19bd99925b
+  husarion_controllers:
+    type: git
+    url: git@github.com:husarion/husarion_controllers.git
+    version: 217b09830f5f42930098b9992eda41710702b625
+  panther_msgs:
+    type: git
+    url: git@github.com:husarion/panther_msgs.git
+    version: eaee6d20360c0496185f67de96dbdfb873e14496
+  panther_ros:
+    type: git
+    url: git@github.com:husarion/panther_ros.git
+    version: fc004c2a73f6bff28c8ed1ebfde21a39e9568ee8
+  ros_components_description:
+    type: git
+    url: git@github.com:husarion/ros_components_description.git
+    version: b29f5637a243b0008ac197032575c8df47883b2c

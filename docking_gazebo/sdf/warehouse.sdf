@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+    <world name="world_demo">
+        <gravity>0 0 -9.8</gravity>
+        <physics type='ode'>
+            <max_step_size>0.01</max_step_size>
+            <real_time_factor>1</real_time_factor>
+            <max_contacts>10</max_contacts>
+        </physics>
+        <plugin name='ignition::gazebo::systems::Physics' filename='libignition-gazebo-physics-system.so'/>
+        <plugin name='ignition::gazebo::systems::UserCommands' filename='libignition-gazebo-user-commands-system.so'/>
+        <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='libignition-gazebo-scene-broadcaster-system.so'/>
+        <plugin name='ignition::gazebo::systems::Imu' filename='ignition-gazebo-imu-system'/>
+        <plugin name='ignition::gazebo::systems::Sensors' filename='ignition-gazebo-sensors-system'>
+            <render_engine>ogre2</render_engine>
+        </plugin>
+
+        <include>
+            <uri>
+                https://fuel.gazebosim.org/1.0/OpenRobotics/models/Depot
+            </uri>
+            <name>warehouse</name>
+            <pose>0 -2 0 0 0 0</pose>
+        </include>
+    </world>
+</sdf>
