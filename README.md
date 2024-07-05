@@ -2,7 +2,7 @@
 
 🔋 A simulated example of [Open Navigation's Nav2 Docking Framework](https://github.com/open-navigation/opennav_docking) in the wild!
 This project makes use of the Husarion's simulated Panther robot that was placed in a warehouse-like Gazebo environment.
-The robot's objective is to safely approach and connect to a charging station marked with an ArUco tag.
+The robot's objective is to safely approach and connect to a charging station marked with an AprilTag.
 
 ![](./docs/docking.gif)
 
