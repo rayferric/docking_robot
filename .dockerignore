@@ -1,5 +1,6 @@
 /.git/
 /BehaviorTree.ROS2/
+/docs/
 /husarion_controllers/
 /panther_msgs/
 /panther_ros/

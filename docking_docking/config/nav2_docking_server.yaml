@@ -1,0 +1,45 @@
+/**:
+  ros__parameters:
+    controller_frequency: 50.0
+    initial_perception_timeout: 5.0
+    wait_charge_timeout: 5.0
+    dock_approach_timeout: 30.0
+    undock_linear_tolerance: 0.05
+    undock_angular_tolerance: 0.1
+    max_retries: 3
+    base_frame: "base_link"
+    fixed_frame: "odom"
+    dock_backwards: false
+    dock_prestaging_tolerance: 0.5
+
+    # Types of docks
+    dock_plugins: ['simple_charging_dock']
+    simple_charging_dock:
+      plugin: 'opennav_docking::SimpleChargingDock'
+      docking_threshold: 0.05
+      staging_x_offset: -1.0 # -distance in front of the dock to the pre-staging position, negative since X+ of the dock points away from the robot
+      staging_yaw_offset: 0.0
+      use_external_detection_pose: true
+      use_battery_status: false # true
+      use_stall_detection: false # true
+
+      external_detection_timeout: 3.0
+      external_detection_translation_x: -0.4 # pose of the docking point relative to the tag pose
+      external_detection_translation_y: 0.0
+      external_detection_rotation_roll: -1.57
+      external_detection_rotation_pitch: 1.57
+      external_detection_rotation_yaw: 0.0
+      filter_coef: 0.1
+
+    # Dock instances
+    docks: ['home_dock']  # Input your docks here
+    home_dock:
+      type: 'simple_charging_dock'
+      frame: map
+      pose: [-0.05, 7.0, 1.5708] # position of the dock device (not the staging position), the front (X+) of the dock should point away from the robot
+
+    controller:
+      k_phi: 3.0
+      k_delta: 2.0
+      v_linear_min: 0.15
+      v_linear_max: 0.15

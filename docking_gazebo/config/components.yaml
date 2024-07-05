@@ -10,16 +10,9 @@ components:
     xyz: 0.0 0.1 0.0
     rpy: 0.0 0.0 0.0
     device_namespace: main_lidar
-
-#   - type: LDR06
-#     parent_link: cover_link
-#     xyz: 0.0 -0.1 0.0
-#     rpy: 0.0 0.0 0.0
-#     device_namespace: second_lidar
-
   - type: CAM01
     name: camera
     parent_link: cover_link
-    xyz: 0.1 0.0 0.0
+    xyz: 0.2 0.0 0.0
     rpy: 0.0 0.0 0.0
     device_namespace: front_cam

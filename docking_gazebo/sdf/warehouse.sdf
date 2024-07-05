@@ -22,5 +22,13 @@
             <name>warehouse</name>
             <pose>0 -2 0 0 0 0</pose>
         </include>
+
+        <include>
+            <uri>
+                https://fuel.gazebosim.org/1.0/MovAi/models/Tugbot-charging-station
+            </uri>
+            <name>dock</name>
+            <pose>-0.05 5 0 0 0 1.5708</pose>
+        </include>
     </world>
 </sdf>

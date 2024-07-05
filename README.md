@@ -4,7 +4,7 @@
 This project makes use of the Husarion's simulated Panther robot that was placed in a warehouse-like Gazebo environment.
 The robot's objective is to safely approach and connect to a charging station marked with an ArUco tag.
 
-<ins>**`TODO: Screenshot/GIF Here`**</ins>
+![](./docs/docking.gif)
 
 ## Prerequisites
 
@@ -13,7 +13,6 @@ The robot's objective is to safely approach and connect to a charging station ma
 ## Getting Started
 
 Just go ahead and run these few commands in your terminal:
-
 ```sh
 $ git clone https://github.com/rayferric/docking_robot.git
 $ cd docking_robot
@@ -35,7 +34,26 @@ Once the image is built and the container boots up, you should see two windows p
 
 Then you can use the "2D Goal Pose" tool in RViz to make the Panther navigate to any location on the map.
 
-<ins>**`TODO: Docking is not yet implemented!`**</ins>
+To initiate the docking sequence, attach a terminal to the container and use the `DockRobot` action:
+```sh
+$ docker exec -it docking_robot-docking_robot-1 bash
+$ source /ws/install/setup.bash
+$ ros2 action send_goal /dock_robot opennav_docking_msgs/action/DockRobot "{dock_id: home_dock}"
+```
+
+The robot should start making its way to the charging station and, in the end, attach to it.
+
+Undock with:    
+```sh
+$ ros2 action send_goal /undock_robot opennav_docking_msgs/action/UndockRobot "{dock_type: simple_charging_dock}"
+```
+
+> [!NOTE]
+> If the performance of the simulation is low, running with a discrete GPU might help.
+> For AMD devices, you can use the `compose.amdgpu.yaml` configuration:
+> ```sh
+> $ docker-compose -f compose.amdgpu.yaml up
+> ```
 
 ## About
 

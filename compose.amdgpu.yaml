@@ -1,0 +1,17 @@
+services:
+  docking_robot:
+    build:
+      context: .
+    environment:
+      - DISPLAY
+      - DRI_PRIME=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ~/.Xauthority:/root/.Xauthority:rw
+    devices:
+        - /dev/kfd
+        - /dev/dri
+    security_opt:
+        - seccomp=unconfined
+    group_add:
+        - video

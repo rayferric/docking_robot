@@ -7,6 +7,8 @@ COPY . /ws/src/docking_robot
 # Pull VCS repos
 RUN vcs import src/docking_robot < src/docking_robot/docking_robot.repos
 
+ENV HUSARION_ROS_BUILD_TYPE=simulation
+
 # Install rosdeps
 RUN apt-get update && \
     rosdep update && \
@@ -14,12 +16,13 @@ RUN apt-get update && \
 
 # Build the workspace
 RUN . /opt/ros/humble/setup.sh && \
-    HUSARION_ROS_BUILD_TYPE=simulation \
     MAKEFLAGS="-j 8" \
     colcon build --symlink-install --parallel-workers 2
 
 # Clean up
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /tmp/*
 
 # Create the entrypoint
 RUN echo '#!/bin/sh\n\

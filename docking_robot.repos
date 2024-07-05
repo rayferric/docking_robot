@@ -7,6 +7,10 @@ repositories:
     type: git
     url: https://github.com/husarion/husarion_controllers.git
     version: 217b09830f5f42930098b9992eda41710702b625
+  husarion_gz_worlds:
+    type: git
+    url: https://github.com/husarion/husarion_gz_worlds.git
+    version: bba5074af5eabf404850245a70a1d60192912a3b
   panther_msgs:
     type: git
     url: https://github.com/husarion/panther_msgs.git

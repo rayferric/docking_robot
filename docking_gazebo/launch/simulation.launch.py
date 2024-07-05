@@ -2,7 +2,7 @@ from ament_index_python import get_package_share_path
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch_ros.actions import Node, SetUseSimTime
+from launch_ros.actions import SetUseSimTime
 
 def generate_launch_description():
     gui_path = str(get_package_share_path("docking_gazebo") / "config" / "gazebo_gui.config")

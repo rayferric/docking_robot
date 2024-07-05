@@ -28,7 +28,7 @@ def generate_launch_description():
                     str(
                         get_package_share_path("docking_navigation")
                         / "launch"
-                        / "nav2.launch.py"
+                        / "navigation.launch.py"
                     )
                 ),
             ),
@@ -43,6 +43,15 @@ def generate_launch_description():
                         / "docking.rviz"
                     ),
                 ],
+            ),
+            IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(
+                    str(
+                        get_package_share_path("docking_docking")
+                        / "launch"
+                        / "docking.launch.py"
+                    )
+                ),
             ),
         ]
     )

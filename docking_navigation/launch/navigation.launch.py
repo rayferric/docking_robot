@@ -2,6 +2,7 @@ from ament_index_python import get_package_share_path
 from launch import LaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.actions import IncludeLaunchDescription
+from launch_ros.actions import SetUseSimTime
 import yaml
 import os
 import copy
@@ -57,6 +58,7 @@ def render_nav2_config():
 def generate_launch_description():
     return LaunchDescription(
         [
+            SetUseSimTime(True),
             # Nav2
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(
