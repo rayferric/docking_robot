@@ -1,0 +1,12 @@
+services:
+  docking_robot:
+    build:
+      context: .
+    runtime: nvidia
+    environment:
+      - DISPLAY
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+
