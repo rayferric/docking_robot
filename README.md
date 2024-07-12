@@ -17,6 +17,8 @@ Just go ahead and run these few commands in your terminal:
 $ git clone https://github.com/rayferric/docking_robot.git
 $ cd docking_robot
 $ docker-compose up
+# docker-compose -f compose.amdgpu.yaml up
+# docker-compose -f compose.nvidia.yaml up
 ```
 
 Once the image is built and the container boots up, you should see two windows pop up on your desktop - Gazebo and RViz.
